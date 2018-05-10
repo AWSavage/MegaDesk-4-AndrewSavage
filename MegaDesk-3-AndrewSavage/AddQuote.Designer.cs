@@ -69,7 +69,6 @@
             this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name of Customer:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -88,7 +87,6 @@
             this.label3.Size = new System.Drawing.Size(202, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Size of Desk Depth:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -195,7 +193,6 @@
             this.label7.Size = new System.Drawing.Size(75, 25);
             this.label7.TabIndex = 11;
             this.label7.Text = "inches";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -255,7 +252,6 @@
             this.radioOak.TabStop = true;
             this.radioOak.Text = "Oak";
             this.radioOak.UseVisualStyleBackColor = true;
-            this.radioOak.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioRosewood
             // 
@@ -300,7 +296,6 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "3 Days";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
             // 
             // radioButton1
             // 
@@ -312,7 +307,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "5 Days";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -374,7 +368,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddQuote";
             this.Text = "AddQuote";
-            this.Load += new System.EventHandler(this.AddQuote_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDeskWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDeskDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDrawers)).EndInit();

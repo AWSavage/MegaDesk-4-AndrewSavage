@@ -17,36 +17,6 @@ namespace MegaDesk_3_AndrewSavage
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             var mainMenu = (MainMenu)Tag;
@@ -54,9 +24,10 @@ namespace MegaDesk_3_AndrewSavage
             Close();
         }
 
-        private void AddQuote_Load(object sender, EventArgs e)
+        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
         }
     }
 }
