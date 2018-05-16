@@ -36,16 +36,6 @@ namespace MegaDesk_3_AndrewSavage
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            StreamReader file = new StreamReader("quote.txt");
-            if(file.)
-            {
-                return;
-            }
-            else
-            {
-                    //create file
-            }
-
             Desk desk = new Desk();
             DeskQuote quote = new DeskQuote();
             quote.Name = textUserName.Text;
@@ -55,6 +45,25 @@ namespace MegaDesk_3_AndrewSavage
             quote.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
             quote.Shipping = (DeskQuote.ShippingSpeed)comboBoxShipping.SelectedValue;
             quote.Date = DateTime.Now;
+
+           string csvFile = "quotes.txt";
+           
+            using (StreamWriter writer = new StreamWriter(csvFile, true))
+            {
+                writer.WriteLine(
+                    $"{quote.Name}," +
+                    $"{quote.Depth}," +
+                    $"{quote.Width}," +
+                    $"{quote.Drawers}," +
+                    $"{quote.SurfaceMaterial}," +
+                    $"{quote.Shipping}," +
+                    $"{quote.Total}," +
+                    $"{quote.Date}");
+            }
+
+            
+
+            this.Hide();
 
         }
     }

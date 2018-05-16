@@ -16,5 +16,10 @@ namespace MegaDesk_3_AndrewSavage
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

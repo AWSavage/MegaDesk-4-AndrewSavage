@@ -226,7 +226,7 @@
             this.comboBoxSurface.Name = "comboBoxSurface";
             this.comboBoxSurface.Size = new System.Drawing.Size(303, 33);
             this.comboBoxSurface.TabIndex = 15;
-            this.comboBoxSurface.Text = "...";
+            this.comboBoxSurface.Text = "Oak";
             // 
             // comboBoxShipping
             // 
@@ -235,12 +235,12 @@
             "3 Days",
             "5 Days",
             "7 Days",
-            "14 Days (Standard Shipping)"});
+            "14 Days"});
             this.comboBoxShipping.Location = new System.Drawing.Point(268, 298);
             this.comboBoxShipping.Name = "comboBoxShipping";
             this.comboBoxShipping.Size = new System.Drawing.Size(303, 33);
             this.comboBoxShipping.TabIndex = 16;
-            this.comboBoxShipping.Text = "...";
+            this.comboBoxShipping.Text = "14 Days";
             // 
             // AddQuote
             // 
