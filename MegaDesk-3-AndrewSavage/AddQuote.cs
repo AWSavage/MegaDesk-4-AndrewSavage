@@ -63,7 +63,7 @@ namespace MegaDesk_3_AndrewSavage
 
             
 
-            this.Hide();
+            //this.Hide();
 
         }
     }

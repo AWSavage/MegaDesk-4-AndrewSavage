@@ -13,14 +13,14 @@ namespace MegaDesk_3_AndrewSavage
 
         public enum ShippingSpeed
         {
-            [Description("3")]
-            Days3 = 3,
-            [Description("5")]
-            Days5 = 5,
-            [Description("7")]
-            Days7 = 7,
-            [Description("14")]
-            Days14 = 14,
+            //[Description("3")]
+            Days3,
+            //[Description("5")]
+            Days5,
+            //[Description("7")]
+            Days7,
+            //[Description("14")]
+            Days14,
         }
 
         public Desk Desk { get; set; }
@@ -34,7 +34,7 @@ namespace MegaDesk_3_AndrewSavage
             Desk = new Desk();
             Name = " ";
             Date = DateTime.Now;
-            Total = 0;
+            Total = getTotal();
             Shipping = DeskQuote.ShippingSpeed.Days14;
         }
 
