@@ -43,22 +43,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.UpDownDrawers = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.radioLaminate = new System.Windows.Forms.RadioButton();
-            this.radioOak = new System.Windows.Forms.RadioButton();
-            this.radioRosewood = new System.Windows.Forms.RadioButton();
-            this.radioVeneer = new System.Windows.Forms.RadioButton();
-            this.radioPine = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.groupShip = new System.Windows.Forms.GroupBox();
-            this.groupMaterial = new System.Windows.Forms.GroupBox();
+            this.comboBoxSurface = new System.Windows.Forms.ComboBox();
+            this.comboBoxShipping = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDeskWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDeskDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDrawers)).BeginInit();
-            this.groupShip.SuspendLayout();
-            this.groupMaterial.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +98,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(66, 338);
+            this.label6.Location = new System.Drawing.Point(61, 301);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(170, 25);
             this.label6.TabIndex = 5;
@@ -133,6 +122,7 @@
             this.buttonSave.TabIndex = 14;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textUserName
             // 
@@ -223,134 +213,42 @@
             this.label9.Size = new System.Drawing.Size(0, 25);
             this.label9.TabIndex = 14;
             // 
-            // label10
+            // comboBoxSurface
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(286, 285);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 25);
-            this.label10.TabIndex = 15;
+            this.comboBoxSurface.FormattingEnabled = true;
+            this.comboBoxSurface.Items.AddRange(new object[] {
+            "Oak",
+            "Laminate",
+            "Pine",
+            "Rosewood",
+            "Veneer"});
+            this.comboBoxSurface.Location = new System.Drawing.Point(268, 202);
+            this.comboBoxSurface.Name = "comboBoxSurface";
+            this.comboBoxSurface.Size = new System.Drawing.Size(303, 33);
+            this.comboBoxSurface.TabIndex = 15;
+            this.comboBoxSurface.Text = "...";
             // 
-            // radioLaminate
+            // comboBoxShipping
             // 
-            this.radioLaminate.AutoSize = true;
-            this.radioLaminate.Location = new System.Drawing.Point(10, 20);
-            this.radioLaminate.Name = "radioLaminate";
-            this.radioLaminate.Size = new System.Drawing.Size(131, 29);
-            this.radioLaminate.TabIndex = 5;
-            this.radioLaminate.TabStop = true;
-            this.radioLaminate.Text = "Laminate";
-            this.radioLaminate.UseVisualStyleBackColor = true;
-            // 
-            // radioOak
-            // 
-            this.radioOak.AutoSize = true;
-            this.radioOak.Location = new System.Drawing.Point(10, 64);
-            this.radioOak.Name = "radioOak";
-            this.radioOak.Size = new System.Drawing.Size(82, 29);
-            this.radioOak.TabIndex = 6;
-            this.radioOak.TabStop = true;
-            this.radioOak.Text = "Oak";
-            this.radioOak.UseVisualStyleBackColor = true;
-            // 
-            // radioRosewood
-            // 
-            this.radioRosewood.AutoSize = true;
-            this.radioRosewood.Location = new System.Drawing.Point(184, 20);
-            this.radioRosewood.Name = "radioRosewood";
-            this.radioRosewood.Size = new System.Drawing.Size(144, 29);
-            this.radioRosewood.TabIndex = 7;
-            this.radioRosewood.TabStop = true;
-            this.radioRosewood.Text = "Rosewood";
-            this.radioRosewood.UseVisualStyleBackColor = true;
-            // 
-            // radioVeneer
-            // 
-            this.radioVeneer.AutoSize = true;
-            this.radioVeneer.Location = new System.Drawing.Point(184, 64);
-            this.radioVeneer.Name = "radioVeneer";
-            this.radioVeneer.Size = new System.Drawing.Size(112, 29);
-            this.radioVeneer.TabIndex = 8;
-            this.radioVeneer.TabStop = true;
-            this.radioVeneer.Text = "Veneer";
-            this.radioVeneer.UseVisualStyleBackColor = true;
-            // 
-            // radioPine
-            // 
-            this.radioPine.AutoSize = true;
-            this.radioPine.Location = new System.Drawing.Point(359, 20);
-            this.radioPine.Name = "radioPine";
-            this.radioPine.Size = new System.Drawing.Size(86, 29);
-            this.radioPine.TabIndex = 9;
-            this.radioPine.TabStop = true;
-            this.radioPine.Text = "Pine";
-            this.radioPine.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(10, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(110, 29);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "3 Days";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(184, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 29);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "5 Days";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(359, 23);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 29);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "7 Days";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // groupShip
-            // 
-            this.groupShip.Controls.Add(this.radioButton2);
-            this.groupShip.Controls.Add(this.radioButton3);
-            this.groupShip.Controls.Add(this.radioButton1);
-            this.groupShip.Location = new System.Drawing.Point(149, 366);
-            this.groupShip.Name = "groupShip";
-            this.groupShip.Size = new System.Drawing.Size(492, 58);
-            this.groupShip.TabIndex = 16;
-            this.groupShip.TabStop = false;
-            // 
-            // groupMaterial
-            // 
-            this.groupMaterial.Controls.Add(this.radioLaminate);
-            this.groupMaterial.Controls.Add(this.radioOak);
-            this.groupMaterial.Controls.Add(this.radioPine);
-            this.groupMaterial.Controls.Add(this.radioRosewood);
-            this.groupMaterial.Controls.Add(this.radioVeneer);
-            this.groupMaterial.Location = new System.Drawing.Point(149, 233);
-            this.groupMaterial.Name = "groupMaterial";
-            this.groupMaterial.Size = new System.Drawing.Size(492, 93);
-            this.groupMaterial.TabIndex = 17;
-            this.groupMaterial.TabStop = false;
+            this.comboBoxShipping.FormattingEnabled = true;
+            this.comboBoxShipping.Items.AddRange(new object[] {
+            "3 Days",
+            "5 Days",
+            "7 Days",
+            "14 Days (Standard Shipping)"});
+            this.comboBoxShipping.Location = new System.Drawing.Point(268, 298);
+            this.comboBoxShipping.Name = "comboBoxShipping";
+            this.comboBoxShipping.Size = new System.Drawing.Size(303, 33);
+            this.comboBoxShipping.TabIndex = 16;
+            this.comboBoxShipping.Text = "...";
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 546);
-            this.Controls.Add(this.groupMaterial);
-            this.Controls.Add(this.groupShip);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.comboBoxShipping);
+            this.Controls.Add(this.comboBoxSurface);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.UpDownDrawers);
             this.Controls.Add(this.label8);
@@ -372,10 +270,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDeskWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDeskDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownDrawers)).EndInit();
-            this.groupShip.ResumeLayout(false);
-            this.groupShip.PerformLayout();
-            this.groupMaterial.ResumeLayout(false);
-            this.groupMaterial.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,16 +292,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown UpDownDrawers;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioLaminate;
-        private System.Windows.Forms.RadioButton radioOak;
-        private System.Windows.Forms.RadioButton radioRosewood;
-        private System.Windows.Forms.RadioButton radioVeneer;
-        private System.Windows.Forms.RadioButton radioPine;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.GroupBox groupShip;
-        private System.Windows.Forms.GroupBox groupMaterial;
+        private System.Windows.Forms.ComboBox comboBoxSurface;
+        private System.Windows.Forms.ComboBox comboBoxShipping;
     }
 }

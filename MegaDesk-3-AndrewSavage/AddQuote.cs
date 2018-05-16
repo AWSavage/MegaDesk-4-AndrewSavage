@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MegaDesk_3_AndrewSavage
 {
@@ -15,6 +16,9 @@ namespace MegaDesk_3_AndrewSavage
         public AddQuote()
         {
             InitializeComponent();
+
+            comboBoxSurface.DataSource = Enum.GetValues(typeof(Desk.Surface));
+            comboBoxShipping.DataSource = Enum.GetValues(typeof(DeskQuote.ShippingSpeed));
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -28,6 +32,30 @@ namespace MegaDesk_3_AndrewSavage
         {
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            StreamReader file = new StreamReader("quote.txt");
+            if(file.)
+            {
+                return;
+            }
+            else
+            {
+                    //create file
+            }
+
+            Desk desk = new Desk();
+            DeskQuote quote = new DeskQuote();
+            quote.Name = textUserName.Text;
+            quote.Width = (int)UpDownDeskWidth.Value;
+            quote.Depth = (int)UpDownDeskDepth.Value;
+            quote.Drawers = (int)UpDownDrawers.Value;
+            quote.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
+            quote.Shipping = (DeskQuote.ShippingSpeed)comboBoxShipping.SelectedValue;
+            quote.Date = DateTime.Now;
+
         }
     }
 }
