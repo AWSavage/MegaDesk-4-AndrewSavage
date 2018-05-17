@@ -66,7 +66,7 @@ namespace MegaDesk_3_AndrewSavage
             using (StreamWriter writer = new StreamWriter(csvFile, true))
             {
                 writer.WriteLine(
-                    $"{quote.Date}" +
+                    $"{quote.Date}," +
                     $"{quote.Name}," +
                     $"{quote.Total}," +
                     $"{desk.Depth}," +

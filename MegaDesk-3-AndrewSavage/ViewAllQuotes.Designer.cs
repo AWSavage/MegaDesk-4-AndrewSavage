@@ -29,23 +29,80 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Depth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WidthInches = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Drawers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurfaceMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shipping = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 61);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.OrderName,
+            this.Total,
+            this.Depth,
+            this.WidthInches,
+            this.Drawers,
+            this.SurfaceMaterial,
+            this.Shipping});
+            this.dataGridView1.Location = new System.Drawing.Point(24, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(832, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(1362, 456);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // OrderName
+            // 
+            this.OrderName.HeaderText = "Order Name";
+            this.OrderName.Name = "OrderName";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // Depth
+            // 
+            this.Depth.HeaderText = "Depth";
+            this.Depth.Name = "Depth";
+            // 
+            // WidthInches
+            // 
+            this.WidthInches.HeaderText = "Width in Inches";
+            this.WidthInches.Name = "WidthInches";
+            // 
+            // Drawers
+            // 
+            this.Drawers.HeaderText = "Drawers";
+            this.Drawers.Name = "Drawers";
+            // 
+            // SurfaceMaterial
+            // 
+            this.SurfaceMaterial.HeaderText = "Surface Material";
+            this.SurfaceMaterial.Name = "SurfaceMaterial";
+            // 
+            // Shipping
+            // 
+            this.Shipping.HeaderText = "Shipping";
+            this.Shipping.Name = "Shipping";
             // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 504);
+            this.ClientSize = new System.Drawing.Size(1420, 514);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
@@ -57,5 +114,13 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Depth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WidthInches;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Drawers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurfaceMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shipping;
     }
 }
