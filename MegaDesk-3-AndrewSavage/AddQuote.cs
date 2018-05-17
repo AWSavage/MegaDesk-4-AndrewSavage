@@ -17,6 +17,21 @@ namespace MegaDesk_3_AndrewSavage
         {
             InitializeComponent();
 
+            var surfaces = new List<Desk.Surface>();
+            surfaces = Enum.GetValues(typeof(Desk.Surface))
+                                .Cast<Desk.Surface>()
+                                .ToList();
+
+            comboBoxSurface.DataSource = surfaces;
+
+            var delievery = new List<DeskQuote.ShippingSpeed>();
+            delievery = Enum.GetValues(typeof(DeskQuote.ShippingSpeed))
+                                .Cast<DeskQuote.ShippingSpeed>()
+                                .ToList();
+
+            comboBoxShipping.DataSource = delievery;
+
+
             comboBoxSurface.DataSource = Enum.GetValues(typeof(Desk.Surface));
             comboBoxShipping.DataSource = Enum.GetValues(typeof(DeskQuote.ShippingSpeed));
         }
@@ -39,10 +54,10 @@ namespace MegaDesk_3_AndrewSavage
             Desk desk = new Desk();
             DeskQuote quote = new DeskQuote();
             quote.Name = textUserName.Text;
-            quote.Width = (int)UpDownDeskWidth.Value;
-            quote.Depth = (int)UpDownDeskDepth.Value;
-            quote.Drawers = (int)UpDownDrawers.Value;
-            quote.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
+            desk.Width = (int)UpDownDeskWidth.Value;
+            desk.Depth = (int)UpDownDeskDepth.Value;
+            desk.Drawers = (int)UpDownDrawers.Value;
+            desk.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
             quote.Shipping = (DeskQuote.ShippingSpeed)comboBoxShipping.SelectedValue;
             quote.Date = DateTime.Now;
 
@@ -51,20 +66,18 @@ namespace MegaDesk_3_AndrewSavage
             using (StreamWriter writer = new StreamWriter(csvFile, true))
             {
                 writer.WriteLine(
+                    $"{quote.Date}" +
                     $"{quote.Name}," +
-                    $"{quote.Depth}," +
-                    $"{quote.Width}," +
-                    $"{quote.Drawers}," +
-                    $"{quote.SurfaceMaterial}," +
-                    $"{quote.Shipping}," +
                     $"{quote.Total}," +
-                    $"{quote.Date}");
+                    $"{desk.Depth}," +
+                    $"{desk.Width}," +
+                    $"{desk.Drawers}," +
+                    $"{desk.SurfaceMaterial}," +
+                    $"{quote.Shipping},");
             }
-
-            
-
-            //this.Hide();
-
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            Close();
         }
     }
 }

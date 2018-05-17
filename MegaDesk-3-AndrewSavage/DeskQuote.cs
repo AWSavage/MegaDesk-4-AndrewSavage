@@ -8,46 +8,34 @@ using System.IO;
 
 namespace MegaDesk_3_AndrewSavage
 {
-    class DeskQuote : Desk
+    class DeskQuote
     {
 
         public enum ShippingSpeed
         {
-            //[Description("3")]
             Days3,
-            //[Description("5")]
             Days5,
-            //[Description("7")]
             Days7,
-            //[Description("14")]
             Days14,
         }
 
-        public Desk Desk { get; set; }
+        Desk desk = new Desk();
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public double Total { get; set; }
         public ShippingSpeed Shipping { get; set; }
 
-        public DeskQuote()
-        {
-            Desk = new Desk();
-            Name = " ";
-            Date = DateTime.Now;
-            Total = getTotal();
-            Shipping = DeskQuote.ShippingSpeed.Days14;
-        }
 
         public double getSurArea()
         {
-            int surfaceArea = Desk.Width * Desk.Depth;
+            int surfaceArea = desk.Width * desk.Depth;
             double addSurCost = 0.00;
             if(surfaceArea > 1000)
             {
                 double size = surfaceArea - 1000;
                 addSurCost = size * 1.00;
             }
-            return surfaceArea;
+            return addSurCost;
         }
 
         public double getDelCost()
@@ -89,7 +77,7 @@ namespace MegaDesk_3_AndrewSavage
         public double getMaterialCost()
         {
             double matCost;
-            switch (Desk.SurfaceMaterial)
+            switch (desk.SurfaceMaterial)
             {
                 case Desk.Surface.Oak:
                     matCost = 200.00;
@@ -115,26 +103,16 @@ namespace MegaDesk_3_AndrewSavage
 
         public double getDraCost()
         {
-            double cost = Desk.Drawers * 50.00;
+            double cost = desk.Drawers * 50.00;
             return cost;
         }
 
         public double getTotal()
         {
             double baseAmount = 200.00;
-            Total = baseAmount + getSurArea() + getDraCost() + getMaterialCost() + getDelCost();
-            this.Total = Total;
-            return Total;
+            double price = 0.00;
+            price = baseAmount + getSurArea() + getDraCost() + getMaterialCost() + getDelCost();
+            return price;
         }
-
-        public DeskQuote(Desk desk, string Name, DateTime date, int Total, ShippingSpeed shipping)
-        {
-            this.Desk = desk;
-            this.Name = Name;
-            this.Date = Date;
-            this.Total = Total;
-            this.Shipping = ShippingSpeed.Days14;
-        }
-
     }
 }

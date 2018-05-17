@@ -216,12 +216,6 @@
             // comboBoxSurface
             // 
             this.comboBoxSurface.FormattingEnabled = true;
-            this.comboBoxSurface.Items.AddRange(new object[] {
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.comboBoxSurface.Location = new System.Drawing.Point(268, 202);
             this.comboBoxSurface.Name = "comboBoxSurface";
             this.comboBoxSurface.Size = new System.Drawing.Size(303, 33);
@@ -231,11 +225,6 @@
             // comboBoxShipping
             // 
             this.comboBoxShipping.FormattingEnabled = true;
-            this.comboBoxShipping.Items.AddRange(new object[] {
-            "3 Days",
-            "5 Days",
-            "7 Days",
-            "14 Days"});
             this.comboBoxShipping.Location = new System.Drawing.Point(268, 298);
             this.comboBoxShipping.Name = "comboBoxShipping";
             this.comboBoxShipping.Size = new System.Drawing.Size(303, 33);
