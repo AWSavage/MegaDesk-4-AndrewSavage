@@ -8,7 +8,7 @@ using System.IO;
 
 namespace MegaDesk_3_AndrewSavage
 {
-    class DeskQuote
+    class DeskQuote : Desk
     {
 
         public enum ShippingSpeed

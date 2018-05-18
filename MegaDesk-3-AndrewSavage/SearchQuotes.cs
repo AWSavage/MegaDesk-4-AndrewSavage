@@ -34,13 +34,17 @@ namespace MegaDesk_3_AndrewSavage
 
         private void loadGrid()
         {
-            string[] deskQuotes = File.ReadAllLines(@"quotes.txt");
-
-            foreach (string deskQuote in deskQuotes)
+            try
             {
+                string[] deskQuotes = File.ReadAllLines(@"quotes.txt");
+
+                foreach (string deskQuote in deskQuotes)
+                {
                     string[] arrRow = deskQuote.Split(new char[] { ',' });
                     dataGridView1.Rows.Add(arrRow);
+                }
             }
+            catch (FileNotFoundException) { }
         }
 
         private void loadGrid(string searchTerm)
@@ -50,7 +54,7 @@ namespace MegaDesk_3_AndrewSavage
 
             foreach(string deskQuote in deskQuotes)
             {
-                if (deskQuotes.Contains(searchTerm))
+                if (deskQuote.Contains(searchTerm))
                 {
                     string[] arrRow = deskQuote.Split(new char[] { ',' });
                     dataGridView1.Rows.Add(arrRow);
@@ -62,6 +66,7 @@ namespace MegaDesk_3_AndrewSavage
         {
             ComboBox combo = (ComboBox)sender;
             loadGrid(combo.SelectedItem.ToString());
+            
         }
     }
 }

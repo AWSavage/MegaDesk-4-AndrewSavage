@@ -51,15 +51,16 @@ namespace MegaDesk_3_AndrewSavage
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Desk desk = new Desk();
             DeskQuote quote = new DeskQuote();
             quote.Name = textUserName.Text;
-            desk.Width = (int)UpDownDeskWidth.Value;
-            desk.Depth = (int)UpDownDeskDepth.Value;
-            desk.Drawers = (int)UpDownDrawers.Value;
-            desk.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
+            quote.Width = (int)UpDownDeskWidth.Value;
+            quote.Depth = (int)UpDownDeskDepth.Value;
+            quote.Drawers = (int)UpDownDrawers.Value;
+            quote.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
             quote.Shipping = (DeskQuote.ShippingSpeed)comboBoxShipping.SelectedValue;
             quote.Date = DateTime.Now;
+
+            
 
            string csvFile = "quotes.txt";
            
@@ -68,11 +69,11 @@ namespace MegaDesk_3_AndrewSavage
                 writer.WriteLine(
                     $"{quote.Date}," +
                     $"{quote.Name}," +
-                    $"{quote.Total}," +
-                    $"{desk.Depth}," +
-                    $"{desk.Width}," +
-                    $"{desk.Drawers}," +
-                    $"{desk.SurfaceMaterial}," +
+                    $"{quote.getTotal()}," +
+                    $"{quote.Depth}," +
+                    $"{quote.Width}," +
+                    $"{quote.Drawers}," +
+                    $"{quote.SurfaceMaterial}," +
                     $"{quote.Shipping},");
             }
             var mainMenu = (MainMenu)Tag;
