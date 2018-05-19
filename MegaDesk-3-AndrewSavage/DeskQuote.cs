@@ -19,16 +19,17 @@ namespace MegaDesk_3_AndrewSavage
             Days14,
         }
 
-        Desk desk = new Desk();
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public double Total { get; set; }
         public ShippingSpeed Shipping { get; set; }
+        
+        
 
 
         public double getSurArea()
         {
-            int surfaceArea = desk.Width * desk.Depth;
+            int surfaceArea = Width * Depth;
             double addSurCost = 0.00;
             if(surfaceArea > 1000)
             {
@@ -77,7 +78,7 @@ namespace MegaDesk_3_AndrewSavage
         public double getMaterialCost()
         {
             double matCost;
-            switch (desk.SurfaceMaterial)
+            switch (SurfaceMaterial)
             {
                 case Desk.Surface.Oak:
                     matCost = 200.00;
@@ -103,16 +104,15 @@ namespace MegaDesk_3_AndrewSavage
 
         public double getDraCost()
         {
-            double cost = desk.Drawers * 50.00;
+            double cost = Drawers * 50.00;
             return cost;
         }
 
         public double getTotal()
         {
             double baseAmount = 200.00;
-            double price = 0.00;
-            price = baseAmount + getSurArea() + getDraCost() + getMaterialCost() + getDelCost();
-            return price;
+            Total = baseAmount + getSurArea() + getDelCost() + getMaterialCost() + getDraCost();
+            return Total;
         }
     }
 }

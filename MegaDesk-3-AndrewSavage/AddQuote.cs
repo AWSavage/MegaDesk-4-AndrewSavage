@@ -59,7 +59,6 @@ namespace MegaDesk_3_AndrewSavage
             quote.SurfaceMaterial = (Desk.Surface)comboBoxSurface.SelectedValue;
             quote.Shipping = (DeskQuote.ShippingSpeed)comboBoxShipping.SelectedValue;
             quote.Date = DateTime.Now;
-
             
 
            string csvFile = "quotes.txt";
@@ -74,7 +73,7 @@ namespace MegaDesk_3_AndrewSavage
                     $"{quote.Width}," +
                     $"{quote.Drawers}," +
                     $"{quote.SurfaceMaterial}," +
-                    $"{quote.Shipping},");
+                    $"{quote.Shipping}");
             }
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
